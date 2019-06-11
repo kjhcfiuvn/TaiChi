@@ -1,11 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
+
 <head>
-  <meta charset="utf-8">
-  <title>TaiChi</title>
-  <link rel="stylesheet" href="./b.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TaiChi</title>
+    <style>
+        body {
+            background: #eee;
+        }
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        @keyframes x {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        #TaiChi {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            animation: x 10s linear infinite;
+            box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
+        }
+        @media (max-width: 500px) {
+            #TaiChi {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        #TaiChi>div:first-child {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            background: black;
+        }
+        #TaiChi>div:nth-child(2) {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            background: white;
+        }
+        #TaiChi>div:nth-child(3) {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            margin-left: -100px;
+            border-radius: 50%;
+            background: black;
+        }
+        @media (max-width: 500px) {
+            #TaiChi>div:nth-child(3) {
+                width: 100px;
+                height: 100px;
+                margin-left: -50px;
+            }
+        }
+        #TaiChi>div:nth-child(4) {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            bottom: 0;
+            margin-left: -100px;
+            border-radius: 50%;
+            background: white;
+        }
+        @media (max-width: 500px) {
+            #TaiChi>div:nth-child(4) {
+                width: 100px;
+                height: 100px;
+                margin-left: -50px;
+            }
+        }
+        #TaiChi>div:nth-child(5) {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            top: 75px;
+            margin-left: -25px;
+            border-radius: 50%;
+            background: white;
+        }
+        @media(max-width: 500px) {
+            #TaiChi>div:nth-child(5) {
+                width: 25px;
+                height: 25px;
+                top: 37.5px;
+                margin-left: -12.5px;
+            }
+        }
+        #TaiChi>div:nth-child(6) {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            bottom: 75px;
+            margin-left: -25px;
+            border-radius: 50%;
+            background: black;
+        }
+        @media (max-width: 500px) {
+            #TaiChi>div:nth-child(6) {
+                width: 25px;
+                height: 25px;
+                bottom: 37.5px;
+                margin-left: -12.5px;
+            }
+        }
+        #TaiChi-wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #TaiChi-describe {
+            margin-top: 1em;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="TaiChi"></div>
+    <div id="TaiChi-wrapper">
+        <div id="TaiChi">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="TaiChi-describe">
+            道可道，非常道
+        </div>
+    </div>
 </body>
+
 </html>
